@@ -32,9 +32,8 @@ public class EntityMotor {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public EntityMotor(int idmotor, String nombreMotor) {
+	public EntityMotor(String nombreMotor) {
 		super();
-		this.idmotor = idmotor;
 		this.nombreMotor = nombreMotor;
 	}
 	

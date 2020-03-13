@@ -26,9 +26,9 @@ public class EntityBateria {
 	public void setNombreBateria(String nombreBateria) {
 		this.nombreBateria = nombreBateria;
 	}
-	public EntityBateria(int idBateria, String nombreBateria) {
+	public EntityBateria(String nombreBateria) {
 		super();
-		this.idBateria = idBateria;
+
 		this.nombreBateria = nombreBateria;
 	}
 	public EntityBateria() {

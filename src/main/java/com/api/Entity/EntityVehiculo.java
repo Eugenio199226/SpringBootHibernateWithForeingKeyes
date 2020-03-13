@@ -23,11 +23,11 @@ public class EntityVehiculo {
 	@Column(name="tipo_Vehiculo",nullable=false,length=50)	
 	private String tipoVehiculo;
 	  @ManyToOne
-	  @JoinColumn(name = "id_motor_vehiculo")
-	    private Motor motor;
+	  @JoinColumn(name = "id_motor")
+	    private int idmotor;
 	  @ManyToOne
-	  @JoinColumn(name = "id_bateria_vehiculo")
-	  private Bateria bateria;
+	  @JoinColumn(name = "id_bateria")
+	  private int idbateria;
 	public int getIdVehiculo() {
 		return idVehiculo;
 	}
@@ -46,31 +46,30 @@ public class EntityVehiculo {
 	public void setTipoVehiculo(String tipoVehiculo) {
 		this.tipoVehiculo = tipoVehiculo;
 	}
-	public Motor getMotor() {
-		return motor;
+	public int getIdmotor() {
+		return idmotor;
 	}
-	public void setMotor(Motor motor) {
-		this.motor = motor;
+	public void setIdmotor(int idmotor) {
+		this.idmotor = idmotor;
 	}
-	public Bateria getBateria() {
-		return bateria;
+	public int getIdbateria() {
+		return idbateria;
 	}
-	public void setBateria(Bateria bateria) {
-		this.bateria = bateria;
+	public void setIdbateria(int idbateria) {
+		this.idbateria = idbateria;
 	}
-	public EntityVehiculo(int idVehiculo, String modelo, String tipoVehiculo, Motor motor, Bateria bateria) {
+	public EntityVehiculo(String modelo, String tipoVehiculo, int idmotor, int idbateria) {
 		super();
-		this.idVehiculo = idVehiculo;
 		this.modelo = modelo;
 		this.tipoVehiculo = tipoVehiculo;
-		this.motor = motor;
-		this.bateria = bateria;
+		this.idmotor = idmotor;
+		this.idbateria = idbateria;
 	}
 	public EntityVehiculo() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
+	
 	
 	
 }
