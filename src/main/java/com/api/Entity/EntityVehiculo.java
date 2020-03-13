@@ -22,11 +22,13 @@ public class EntityVehiculo {
 	private String modelo;
 	@Column(name="tipo_Vehiculo",nullable=false,length=50)	
 	private String tipoVehiculo;
-	  @ManyToOne
-	  @JoinColumn(name = "id_motor")
+	  /*@ManyToOne
+	  @JoinColumn(name = "id_motor")*/
+	@Column(name="id_motor_vehiculo",nullable=false)	
 	    private int idmotor;
-	  @ManyToOne
-	  @JoinColumn(name = "id_bateria")
+	  /*@ManyToOne
+	  @JoinColumn(name = "id_bateria")*/
+	@Column(name="id_bateria_vehiculo",nullable=false)
 	  private int idbateria;
 	public int getIdVehiculo() {
 		return idVehiculo;
