@@ -36,7 +36,7 @@ public class VehiculoController {
 	public ResponseEntity<EntityVehiculo> createVehiculo( @RequestBody Vehiculo veh)
 	{	
 		LOG.info("Creating vehiculo....");
-		EntityVehiculo data = new EntityVehiculo(veh.getModelo(),veh.getTipoVehiculo(),veh.getIdmotor(),veh.getIdbateria());
+		EntityVehiculo data = new EntityVehiculo(veh.getModelo(),veh.getTipoVehiculo(),veh.getIdbateria(),veh.getIdmotor());
 		EntityVehiculo vehiculoGuardado = vehrep.save(data);
 		LOG.info("Created vehiculo....");
 		return  ResponseEntity.ok().body(vehiculoGuardado);
@@ -70,6 +70,7 @@ public class VehiculoController {
 				veh.get().setModelo(vehDetails.getModelo());
 				veh.get().setTipoVehiculo(vehDetails.getTipoVehiculo());
 				veh.get().setIdmotor(vehDetails.getIdmotor());
+				veh.get().setIdbateria(vehDetails.getIdbateria());
 				veh.get().setIdVehiculo(vehDetails.getIdVehiculo());
 				EntityVehiculo vehiculoActualizado = veh.get();
 				EntityVehiculo actualizarVehiculo=vehrep.save(vehiculoActualizado);

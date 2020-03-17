@@ -1,17 +1,17 @@
 package com.api.Entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
-import com.api.model.Bateria;
-import com.api.model.Motor;
-
 @Entity
 @Table(name="vehiculo")
 public class EntityVehiculo {
@@ -22,14 +22,14 @@ public class EntityVehiculo {
 	private String modelo;
 	@Column(name="tipo_Vehiculo",nullable=false,length=50)	
 	private String tipoVehiculo;
-	  /*@ManyToOne
-	  @JoinColumn(name = "id_motor")*/
-	@Column(name="id_motor_vehiculo",nullable=false)	
-	    private int idmotor;
-	  /*@ManyToOne
-	  @JoinColumn(name = "id_bateria")*/
+	@Column(name="id_motor_vehiculo",nullable=false)
+	private int idmotor;
 	@Column(name="id_bateria_vehiculo",nullable=false)
-	  private int idbateria;
+	private int idbateria;
+	
+	@OneToMany(cascade = { CascadeType.ALL }, fetch=FetchType.EAGER)
+	@JoinTable(name = "vehiculo_motor_bateria", joinColumns = { @JoinColumn(name = "id_motor_vehiculo"), @JoinColumn(name = "id_bateria_vehiculo")}, inverseJoinColumns = {
+			@JoinColumn(name = "idmotor"),@JoinColumn(name = "id_plataforma") })
 	public int getIdVehiculo() {
 		return idVehiculo;
 	}
@@ -72,6 +72,8 @@ public class EntityVehiculo {
 		// TODO Auto-generated constructor stub
 	}
 	
+	
+
 	
 	
 }

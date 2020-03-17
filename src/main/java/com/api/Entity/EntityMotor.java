@@ -16,6 +16,10 @@ public class EntityMotor {
 	private int idmotor;
 	@Column(name="nombre_motor",nullable=false,length=50)	
 	private String nombreMotor;
+	public EntityMotor(String nombreMotor) {
+		super();
+		this.nombreMotor = nombreMotor;
+	}
 	public int getIdmotor() {
 		return idmotor;
 	}
@@ -32,9 +36,6 @@ public class EntityMotor {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public EntityMotor(String nombreMotor) {
-		super();
-		this.nombreMotor = nombreMotor;
-	}
+
 	
 }

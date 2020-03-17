@@ -11,14 +11,14 @@ import javax.persistence.Table;
 public class EntityBateria {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int idBateria;
+	private int id_Bateria;
 	@Column(name="nombre_bateria",nullable=false,length=50)	
 	private String nombreBateria;
 	public int getIdBateria() {
-		return idBateria;
+		return id_Bateria;
 	}
-	public void setIdBateria(int idBateria) {
-		this.idBateria = idBateria;
+	public void setIdBateria(int id_Bateria) {
+		this.id_Bateria = id_Bateria;
 	}
 	public String getNombreBateria() {
 		return nombreBateria;
